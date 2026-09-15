@@ -133,4 +133,52 @@ export function GameProvider({ children }: { children: ReactNode }) {
     (id: string) => {
       setState((prev) => {
         if (prev.memoriesDiscovered.includes(id)) return prev
-        return { ...prev, memoriesDiscovered:
+        return { ...prev, memoriesDiscovered: [...prev.memoriesDiscovered, id] }
+      })
+    },
+    [setState],
+  )
+
+  const value = useMemo<GameContextValue>(
+    () => ({
+      state,
+      phase,
+      setPhase,
+      setAnswer,
+      setCompatibilityScore,
+      setHomecomingResponse,
+      unlockAchievement,
+      toastQueue,
+      dequeueToast,
+      discoverEasterEgg,
+      discoverMemory,
+      promUnlocked: siteConfig.promUnlocked || state.promUnlocked,
+      audio,
+      isReturning,
+    }),
+    [
+      state,
+      phase,
+      setPhase,
+      setAnswer,
+      setCompatibilityScore,
+      setHomecomingResponse,
+      unlockAchievement,
+      toastQueue,
+      dequeueToast,
+      discoverEasterEgg,
+      discoverMemory,
+      audio,
+      isReturning,
+    ],
+  )
+
+  return <GameContext.Provider value={value}>{children}</GameContext.Provider>
+}
+
+// eslint-disable-next-line react-refresh/only-export-components
+export function useGame(): GameContextValue {
+  const ctx = useContext(GameContext)
+  if (!ctx) throw new Error('useGame must be used within a GameProvider')
+  return ctx
+}
