@@ -1,7 +1,8 @@
 // ════════════════════════════════════════════════════════════════
-//  ACHIEVEMENTS
-//  Minecraft-style "Advancement made!" toasts.
-//  `id` is used for localStorage — don't change ids once shipped.
+//  ACHIEVEMENTS  —  Minecraft "Advancement made!" style.
+//  Titles borrow the spirit of real Minecraft advancements.
+//  `id` is used internally — DON'T change ids once shipped.
+//  (You can freely edit title / description / icon.)
 // ════════════════════════════════════════════════════════════════
 
 export interface Achievement {
@@ -14,51 +15,57 @@ export interface Achievement {
 export const achievements: Achievement[] = [
   {
     id: 'first-question',
-    title: 'First Question Answered',
-    description: 'The experiment has begun.',
-    icon: '🌱',
+    title: 'Taking Inventory',
+    description: 'Answer your first question.',
+    icon: '🎒',
   },
   {
     id: 'flower-expert',
-    title: 'Flower Expert',
-    description: 'You know your flowers.',
+    title: 'A Seedy Place',
+    description: 'You know every flower in the biome.',
     icon: '🌻',
   },
   {
     id: 'minecraft-scholar',
-    title: 'Minecraft Scholar',
+    title: 'Diamonds!',
     description: 'Certified block enthusiast.',
-    icon: '⛏️',
+    icon: '💎',
   },
   {
     id: 'flower-forest-explorer',
-    title: 'Flower Forest Explorer',
-    description: 'You wandered off the path.',
+    title: 'Adventuring Time',
+    description: 'You wandered into the Flower Forest.',
     icon: '🌸',
   },
   {
     id: 'compatibility-investigator',
-    title: 'Compatibility Investigator',
+    title: 'What Have You Done?',
     description: 'You clicked INVESTIGATE. Bold.',
     icon: '🔍',
   },
   {
     id: 'rare-flower',
-    title: 'Found: Rare Flower',
-    description: 'Something that wasn\'t supposed to be here.',
+    title: 'Rare Drop!',
+    description: 'Something that wasn’t supposed to spawn.',
     icon: '🌺',
   },
   {
     id: 'homecoming-unlocked',
-    title: 'Homecoming Unlocked',
+    title: 'Best Friends Forever',
     description: 'The real question, finally.',
     icon: '💗',
   },
   {
     id: 'developer-mode',
-    title: 'Developer Mode',
+    title: 'How Did We Get Here?',
     description: 'You saw behind the curtain.',
-    icon: '🧑‍💻',
+    icon: '🛠️',
+  },
+  {
+    id: 'cat-whisperer',
+    title: 'A Complete Catalogue',
+    description: 'You found the cat. Obviously there’s a cat.',
+    icon: '🐈',
   },
 ]
 
