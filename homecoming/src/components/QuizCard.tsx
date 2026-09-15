@@ -77,6 +77,9 @@ export function QuizCard({
                 disabled={!!selected}
                 whileHover={{ y: -4 }}
                 whileTap={{ scale: 0.96 }}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
                 className={`group flex flex-col items-center gap-2 rounded-2xl border p-4 transition-colors ${
                   isSel
                     ? 'border-rose bg-petal shadow-petal'
